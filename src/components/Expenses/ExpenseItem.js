@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import ExpenseDate from './ExpenseDate';
 import Card from '../UI/Card';
@@ -8,10 +8,14 @@ const ExpenseItem = (props) => {
   //Imperative Way of adding Event Listener
   // document.getElementById('root').addEventListener()
 
-  let title = props.title;
+  const [title, setTitle] = useState(props.title);
+  //useState return an array[original element, updated element]
+
+  //let title = props.title;
 
   const clickHandler = () => {
-    title = 'Updated';
+    setTitle('Updated!!');
+    //title = 'Updated';
     console.log(title);
   };
   return (
